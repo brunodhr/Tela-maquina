@@ -49,28 +49,36 @@
             <span class="graf-5"></span>
           </div>
           <div class="box-timer">
-            <dir class="rule">
-              <img class="rule-img" src="./assets/rule.svg" alt="">
+            <dir class="timers">
+              <img class="clock-img" src="./assets/clock.svg" alt="">
+              <div class="rets-imgs">
+                <div class="single-box-timer">
+                  <img class="ret-img" src="./assets/ret_green.svg" alt="">
+                  <span class="timer-clock">20:00</span>
+                  <span class="timer-ref">H</span>
+                </div>
+                <div class="single-box-timer">
+                  <img class="ret-img" src="./assets/ret_orange.svg" alt="">
+                  <span class="timer-clock">03:00</span>
+                  <span class="timer-ref">H</span>
+                </div>
+                <div class="single-box-timer">
+                  <img class="ret-img" src="./assets/ret_red.svg" alt="">
+                  <span class="timer-clock">01:00</span>
+                  <span class="timer-ref">H</span>
+                </div>
+              </div>
             </dir>
           </div>
           <div class="box-ruler">
             <dir class="rule">
               <img class="rule-img" src="./assets/rule.svg" alt="">
+              <span class="rule-percent">100%</span>
             </dir>
           </div>
         </div>
       </div>
     </div>
-    <!-- <div style="width:100%;display:flex;">
-      <img src="./assets/clock.svg" alt="">
-      <img src="./assets/curve.svg" alt="">
-      <img src="./assets/gauge.svg" alt="">
-      <img src="./assets/needle.svg" alt="">
-      <img src="./assets/ret_green.svg" alt="">
-      <img src="./assets/ret_orange.svg" alt="">
-      <img src="./assets/ret_red.svg" alt="">
-      <img src="./assets/rule.svg" alt="">
-    </div> -->
   </div>
 </template>
 
@@ -120,25 +128,69 @@ export default {
 </script>
 
 <style>
+.single-box-timer{
+  position: relative;
+}
+.timer-clock{
+  position:absolute;
+  left:20%;
+  top:30%;
+  font-family:Arial;
+  font-size:25px;
+  font-weight: bold;
+  color:white;
+}
+.timer-ref{
+    position: absolute;
+    right: 11%;
+    top: 10%;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+}
+.rets-imgs{
+  display:flex;
+}
+.clock-img{
+  top: 1px;
+  height: 55px;
+  z-index: 1;
+  left: 6%;
+  position: absolute;
+}
+.ret-img{
+  height:40px;
+}
+.timers{
+  width:100%;
+  display:flex;
+  justify-content: space-around;
+}
 .rule{
   border:3px solid black;
   border-radius:5px;
-  width:80%;
+  width:70%;
   position:absolute;
-  background-color:Red;
+  background-image: linear-gradient(to right,#00C84F 50%, #00C84F 70%, yellow 70%, yellow 95%, red 90%, red );
   height:35px;
 }
 .rule-img{
+  width:100%;
   position: absolute;
   left: 0px;
   bottom: 1px;
 }
+.rule-percent{
+  position: absolute;
+  right: -10%;
+}
 .box-timer{
-  background-color: blue;
+  background-color: white;
   position: absolute;
   width: 100%;
   height: 55px;
-  bottom: 55px;
+  bottom: 65px;
   display:flex;
   justify-content: center;
 }
@@ -207,9 +259,8 @@ export default {
   right: 40px;
   border: double 55px transparent;
   border-radius: 100%;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white)), radial-gradient(circle at top left, #f00,#3020ff);
-  background-image: linear-gradient(white, white), radial-gradient(circle at top left, #f00,#3020ff);
-  /* background-image: linear-gradient(to right, red 25%, green 25%, green 70%, yellow 70%, yellow 80%, blue 80%, blue ); */
+  background-image: linear-gradient(white, white),
+  radial-gradient(circle at top left, green 25%, green 25%, green 40%, red 40%, red 45% , yellow 45%, yellow 60%, #CFD1D2 60%, #CFD1D2);
   background-origin: border-box;
   background-clip: content-box, border-box;
 }
@@ -283,6 +334,49 @@ export default {
   left: 50%;
   top: 11%;
   transform: translate(-50%);
+}
+@media(min-width:1440px) and (max-width:1600px){
+  .content-timer{
+    left: 46%;
+  }
+  .title-min{
+    left: 18% !important;
+  }
+}
+@media(min-width:1024px) and (max-width:1439px){
+  .content-timer{
+    left: 41%;
+  }
+  .title-min{
+    left: 25% !important;
+  }
+  .title-text{
+    right: 17% !important;
+  }
+}
+@media(min-width:768px) and (max-width:1023px){
+  .content-timer{
+    left: 32%;
+  }
+  .title-min{
+    left: 33% !important;
+  }
+  .title-text{
+    right: 18% !important;
+  }
+}
+@media(min-width:425px) and (max-width:767px){
+  .content-timer{
+    left: 15%;
+  }
+  .title-min{
+    left: 60% !important;
+    font-size:15px !important;
+  }
+  .title-text{
+    right: 18% !important;
+    font-size:18px !important;
+  }
 }
 .title-timer{
   position:absolute;
