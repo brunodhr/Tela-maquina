@@ -16,7 +16,7 @@
           </div>
           <div class="content-tela">
             <img src="./assets/gauge.svg" alt="">
-            <img class="needle" src="./assets/needle.svg" alt="">
+            <img :style="needleStyle" src="./assets/needle.svg" alt="">
             <div class="inf-extremos">
               <span class="text-inf">0EE</span>
               <span class="text-inf">70%</span>
@@ -95,6 +95,13 @@ export default {
       },
       bgStyle: {
         backgroundColor: '#006E30'
+      },
+      needleStyle: {
+        position: 'absolute',
+        width: '40px',
+        top: '56px',
+        left: '70%',
+        transform: 'rotate(25deg)'
       }
     }
   },
@@ -107,18 +114,38 @@ export default {
           this.stopStatus = 'PARADA'
           this.myStyle.backgroundColor = '#00C84F'
           this.bgStyle.backgroundColor = '#006E30'
+          this.needleStyle = {
+            position: 'absolute',
+            width: '40px',
+            top: '56px',
+            left: '70%',
+            transform: 'rotate(25deg)'
+          }
           break
         case 2:
           this.nameStatus = 'Manutenção preventiva'
           this.stopStatus = 'PARADA'
           this.myStyle.backgroundColor = '#FABA18'
           this.bgStyle.backgroundColor = '#F89700'
+          this.needleStyle = {
+            position: 'absolute',
+            width: '40px',
+            top: '28px',
+            left: '46%'
+          }
           break
         case 3:
           this.nameStatus = 'Emergência acionada'
           this.stopStatus = ''
           this.myStyle.backgroundColor = '#F20000'
           this.bgStyle.backgroundColor = '#C10000'
+          this.needleStyle = {
+            position: 'absolute',
+            width: '40px',
+            top: '55px',
+            left: '23%',
+            transform: 'rotate(-23deg)'
+          }
           break
       }
     }
@@ -319,6 +346,20 @@ export default {
   width:40px;
   top: 28px;
   left: 46%;
+}
+.needle-red{
+  position: absolute;
+  width: 40px;
+  top: 55px;
+  left: 23%;
+  transform: rotate(-23deg);
+}
+.needle-green{
+  position: absolute;
+  width: 40px;
+  top: 56px;
+  left: 70%;
+  transform: rotate(25deg);
 }
 .inf-extremos{
   position: relative;
