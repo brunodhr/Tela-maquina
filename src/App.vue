@@ -101,7 +101,8 @@ export default {
         width: '40px',
         top: '56px',
         left: '70%',
-        transform: 'rotate(25deg)'
+        transform: 'rotate(25deg)',
+        transition: '0.3s'
       }
     }
   },
@@ -119,7 +120,8 @@ export default {
             width: '40px',
             top: '56px',
             left: '70%',
-            transform: 'rotate(25deg)'
+            transform: 'rotate(25deg)',
+            transition: '0.3s'
           }
           break
         case 2:
@@ -131,7 +133,8 @@ export default {
             position: 'absolute',
             width: '40px',
             top: '28px',
-            left: '46%'
+            left: '46%',
+            transition: '0.3s'
           }
           break
         case 3:
@@ -144,7 +147,8 @@ export default {
             width: '40px',
             top: '55px',
             left: '23%',
-            transform: 'rotate(-23deg)'
+            transform: 'rotate(-23deg)',
+            transition: '0.3s'
           }
           break
       }
